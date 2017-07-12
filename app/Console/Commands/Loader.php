@@ -12,7 +12,7 @@ class Loader extends Command
      *
      * @var string
      */
-    protected $signature = 'loader';
+    protected $signature = 'loader {date}';
 
     /**
      * The console command description.
@@ -38,6 +38,7 @@ class Loader extends Command
      */
     public function handle()
     {
-        Currencies::loader();
+        $date = $this->argument('date');
+        Currencies::loader($date);
     }
 }
