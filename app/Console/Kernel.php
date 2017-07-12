@@ -2,8 +2,12 @@
 
 namespace App\Console;
 
+use App\Console\Commands\Loader;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Illuminate\Support\Facades\App;
+
+use SebastianBergmann\Environment\Console;
 
 class Kernel extends ConsoleKernel
 {
@@ -13,7 +17,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        Loader::class
     ];
 
     /**
