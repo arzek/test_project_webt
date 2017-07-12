@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>Test Project Webt</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -59,7 +59,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+            <a class="navbar-brand" href="index.html">Test Project Webt</a>
         </div>
         <!-- /.navbar-header -->
 
@@ -104,11 +104,11 @@
                         <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                             <thead>
                             <tr>
-                                <th>Rendering engine</th>
-                                <th>Browser</th>
-                                <th>Platform(s)</th>
-                                <th>Engine version</th>
-                                <th>CSS grade</th>
+                                <th>r030</th>
+                                <th>txt</th>
+                                <th>rate</th>
+                                <th>cc</th>
+                                <th>exchangedate</th>
                             </tr>
                             </thead>
                             <tbody>
