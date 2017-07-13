@@ -19,7 +19,7 @@ class Loader extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Load currencies';
 
     /**
      * Create a new command instance.

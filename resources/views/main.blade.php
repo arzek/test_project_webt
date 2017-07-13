@@ -97,7 +97,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
-                    
+
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -111,15 +111,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            {{--@foreach($data as $item)--}}
-                            {{--<tr class="odd gradeX">--}}
-                                {{--<td>{{ $item->r030 }}</td>--}}
-                                {{--<td>{{ $item->txt }}</td>--}}
-                                {{--<td>{{ $item->rate }}</td>--}}
-                                {{--<td class="center">{{ $item->cc }}</td>--}}
-                                {{--<td class="center">{{ $item->exchangedate }}</td>--}}
-                            {{--</tr>--}}
-                           {{--@endforeach--}}
+
 
                             </tbody>
                         </table>
