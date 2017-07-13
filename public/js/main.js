@@ -79,7 +79,11 @@ app.controller('MainController', ['$scope','$http', function($scope,$http) {
         });
     }
     function getInfo() {
-
+        swal(
+            'No data for this date!',
+            'Please choose another date.',
+            'warning'
+        )
     }
     function getLoadReqV2() {
         $http.get("/load_currencies?date="+getFormatDateV2()).then(function(response) {});
