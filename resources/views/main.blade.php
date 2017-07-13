@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 
 <head>
 
@@ -37,16 +37,16 @@
     <![endif]-->
 
 
-    <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 
 
 
     <!-- Include Date Range Picker -->
 
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.min.css" />
 </head>
 
-<body>
+<body ng-controller="MainController">
 
 <div id="wrapper">
 
@@ -64,10 +64,11 @@
         <!-- /.navbar-header -->
 
         <ul class="nav navbar-top-links navbar-right" style="padding: 8px;">
-            <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
-                <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
-                <span></span> <b class="caret"></b>
-            </div>
+            <li>Date:</li>
+            <li>
+                <input type="text" name="date" class="form-control">
+            </li>
+
         </ul>
         <!-- /.navbar-top-links -->
 
@@ -112,20 +113,15 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr class="odd gradeX">
-                                <td>Trident</td>
-                                <td>Internet Explorer 4.0</td>
-                                <td>Win 95+</td>
-                                <td class="center">4</td>
-                                <td class="center">X</td>
-                            </tr>
-                            <tr class="even gradeC">
-                                <td>Trident</td>
-                                <td>Internet Explorer 5.0</td>
-                                <td>Win 95+</td>
-                                <td class="center">5</td>
-                                <td class="center">C</td>
-                            </tr>
+                            {{--@foreach($data as $item)--}}
+                            {{--<tr class="odd gradeX">--}}
+                                {{--<td>{{ $item->r030 }}</td>--}}
+                                {{--<td>{{ $item->txt }}</td>--}}
+                                {{--<td>{{ $item->rate }}</td>--}}
+                                {{--<td class="center">{{ $item->cc }}</td>--}}
+                                {{--<td class="center">{{ $item->exchangedate }}</td>--}}
+                            {{--</tr>--}}
+                           {{--@endforeach--}}
 
                             </tbody>
                         </table>
@@ -164,39 +160,38 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="/dist/js/sb-admin-2.js"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+<script src="/js/main.js"></script>
+
 <script>
-    $(function() {
-
-        $('#dataTables-example').DataTable({
-            responsive: true
-        });
 
 
-        var start = moment().subtract(29, 'days');
-        var end = moment();
+    getDateFromUrl();
 
-        function cb(start, end) {
-            $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+
+
+    function getDateFromUrl() {
+        if(parseGetParams().date)
+            var date = new Date(parseGetParams().date);
+        else
+            var date = new Date();
+
+        var f_date = (date.getMonth() + 1) + '/' + date.getDate()  + '/' +  date.getFullYear();
+        $('input[name="date"]').val(f_date);
+    }
+    function parseGetParams() {
+        var $_GET = {};
+        var __GET = window.location.search.substring(1).split("&");
+        for(var i=0; i<__GET.length; i++) {
+            var getVar = __GET[i].split("=");
+            $_GET[getVar[0]] = typeof(getVar[1])=="undefined" ? "" : getVar[1];
         }
-
-        $('#reportrange').daterangepicker({
-            startDate: start,
-            endDate: end,
-            ranges: {
-                'Today': [moment(), moment()],
-                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                'This Month': [moment().startOf('month'), moment().endOf('month')],
-                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-            }
-        }, cb);
-
-        cb(start, end);
-
-    });
+        return $_GET;
+    }
 </script>
 
 </body>

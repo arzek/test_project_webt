@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('main');
-});
+Route::get('/',"MainCotroller@index");
+Route::get('/get_currencies',"MainCotroller@get_currencies");
+Route::get('/load_currencies',"MainCotroller@load_currencies");
+Route::get('/fast_load_currencies',"MainCotroller@fast_load_currencies");
