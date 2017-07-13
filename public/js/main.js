@@ -25,7 +25,7 @@ app.controller('MainController', ['$scope','$http', function($scope,$http) {
 
     function get_currencies(date)
     {
-        $http.get("/get_currencies?date="+getFormatDate()).then(function(response) {
+        $http.get("/public/get_currencies?date="+getFormatDate()).then(function(response) {
             var data = response.data;
             if(data.length)
             {
@@ -62,7 +62,7 @@ app.controller('MainController', ['$scope','$http', function($scope,$http) {
         }
     }
     function getLoadReq() {
-        $http.get("/fast_load_currencies?date="+getFormatDateV2()).then(function(response) {
+        $http.get("/public/fast_load_currencies?date="+getFormatDateV2()).then(function(response) {
             var data = response.data;
 
 
@@ -86,7 +86,7 @@ app.controller('MainController', ['$scope','$http', function($scope,$http) {
         )
     }
     function getLoadReqV2() {
-        $http.get("/load_currencies?date="+getFormatDateV2()).then(function(response) {});
+        $http.get("/public/load_currencies?date="+getFormatDateV2()).then(function(response) {});
     }
 
 }]);

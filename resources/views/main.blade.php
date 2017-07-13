@@ -12,22 +12,22 @@
     <title>Test Project Webt</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url('public/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="{{ url('public/vendor/metisMenu/metisMenu.min.css') }}" rel="stylesheet">
 
     <!-- DataTables CSS -->
-    <link href="/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="{{ url('public/vendor/datatables-plugins/dataTables.bootstrap.css') }}" rel="stylesheet">
 
     <!-- DataTables Responsive CSS -->
-    <link href="/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+    <link href="{{ url('public/vendor/datatables-responsive/dataTables.responsive.css') }}" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="{{ url('public/dist/css/sb-admin-2.css') }}" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ url('public/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -135,21 +135,21 @@
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="{{ url('public/vendor/jquery/jquery.min.js') }}"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="{{ url('public/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 
 <!-- Metis Menu Plugin JavaScript -->
-<script src="/vendor/metisMenu/metisMenu.min.js"></script>
+<script src="{{ url('public/vendor/metisMenu/metisMenu.min.js') }}"></script>
 
 <!-- DataTables JavaScript -->
-<script src="/vendor/datatables/js/jquery.dataTables.min.js"></script>
-<script src="/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-<script src="/vendor/datatables-responsive/dataTables.responsive.js"></script>
+<script src="{{ url('public/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ url('public/vendor/datatables-plugins/dataTables.bootstrap.min.js') }}"></script>
+<script src="{{ url('public/vendor/datatables-responsive/dataTables.responsive.js') }}"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="/dist/js/sb-admin-2.js"></script>
+<script src="{{ url('public/dist/js/sb-admin-2.js') }}"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
@@ -157,7 +157,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.6/sweetalert2.min.js"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
-<script src="/js/main.js"></script>
+<script src="{{ url('public/js/main.js') }}"></script>
 
 <script>
 
