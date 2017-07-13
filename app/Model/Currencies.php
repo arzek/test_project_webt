@@ -14,7 +14,13 @@ class Currencies extends Model
     public $timestamps = false;
     protected $primaryKey = 'r030';
 
+    public static function get_res($date)
+    {
+        $curl  = new Curl();
+        $curl->get(env('API_URL')."&date=".$date);
 
+        return $curl->response;
+    }
     public static function loader($date)
     {
         $curl  = new Curl();

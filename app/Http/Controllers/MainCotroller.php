@@ -41,15 +41,24 @@ class MainCotroller extends Controller
 
         return response()->json($data);
     }
+
+    public function fast_load_currencies(Request $request)
+    {
+        $date = $request->input('date');
+        $data = Currencies::get_res($date);
+
+        return response()->json($data);
+    }
     public function load_currencies(Request $request)
     {
         try
         {
             $date = $request->input('date');
-            Currencies::loader($date);
+            $data = Currencies::loader($date);
 
             return response()->json([
-                'res' => 1
+                'res' => 1,
+                'data' =>$data
             ]);
         }catch (\Exception $e)
         {
